@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Home</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<center>
+		{% if if_person == "False" %}
+		<div class="alert alert-warning alert-dismissible">
+  			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  			<strong>Sorry!</strong> It looks like you arent the person used within the image. Feel free to try again!
+		</div>
+		{% endif %}
+		{% if if_test == "False" %}
+		<div class="alert alert-warning alert-dismissible">
+  			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  			<strong>Sorry!</strong> It looks like you failed the {{ test_type }} test. Feel free to try again!
+		</div>
+		{% endif %}
+		<h3>Hello World</h3>
+		{{ html }}
+	</center>
+</body>
+</html>
