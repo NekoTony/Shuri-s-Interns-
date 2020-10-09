@@ -6,5 +6,4 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == '__main__':
-    app.secret_key = 'thisisakey9112'
-    app.run(debug=True, port=9000, threaded=True)
+    app.run(debug=False, host='127.0.0.1', port=9000, threaded=True)
