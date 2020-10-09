@@ -1,5 +1,9 @@
 from flask import Flask, render_template, redirect, request, jsonify, url_for, Markup
+import requests
 app = Flask(__name__)
+
+partner_id = "partnerId = ptnr_1lzs0zD6uWo7k-OdUXjLW_pFgX3"
+PaymentTransferJson = {}
 
 @app.route("/")
 def home():
@@ -27,7 +31,16 @@ def check():
 
 @app.route("/checkout")
 def checkout():
+    PaymentTransfer()
     return "Template for verification is successful"
+
+#@app.route("/merchantPaymentTransfer")
+def PaymentTransfer():
+    if PaymentTransferJson == {}:
+        url = "https://sandbox.api.mastercard.com/send/static/v1/partners/{}/merchant/transfers/payment".format(partner_id)
+        r = requests.get(url)
+        print(r.status_code)
+
 
 
 if __name__ == "__main__":
